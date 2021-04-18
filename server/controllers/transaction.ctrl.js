@@ -5,7 +5,10 @@ class Transactionn {
     static async transactionn(req, res) {
         try {
 
-            console.log('Server was hit with body ->> ', req.body);
+            console.log('Adding a transaction');
+
+            await db.from('public.transactions')
+                .insert({amount: req.body.amount, trx_type: 'DEBIT'});
             
             return res.status(HttpStatus.OK).send({ success : true, msg : `${req.body.amount} Added Successfully!`});
 

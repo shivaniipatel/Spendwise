@@ -1,16 +1,16 @@
 
 
+import './config/env.js';
 import express from 'express';
-const app = express();
-import path from 'path';
-import dotenv from 'dotenv';
-import {router} from './router.js';
 import cors from 'cors';
-
-dotenv.config({ path : path.resolve() +'/server/.env' });
+const app = express();
 
 import HttpStatus from 'http-status-codes';
 global.HttpStatus = HttpStatus;
+import db from './config/knex.js';
+global.db = db;
+
+import {router} from './router.js';
 
 app.set('port',  process.env.PORT || 9001);
 
