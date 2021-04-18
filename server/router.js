@@ -1,9 +1,10 @@
 
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
-const somethingCtrl = require('./controllers/something.ctrl');
+import {Transactionn} from './controllers/transaction.ctrl.js';
 
-router.get('/hello', somethingCtrl.getHello);
+router.post('/transaction', Transactionn.transactionn);
 
-module.exports = router;
+// module.exports = router;
+export {router};

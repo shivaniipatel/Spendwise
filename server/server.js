@@ -1,16 +1,17 @@
 
 
-const express = require('express');
+import express from 'express';
 const app = express();
-const path = require('path');
-const dotenv = require('dotenv');
-const router = require('./router.js');
+import path from 'path';
+import dotenv from 'dotenv';
+import {router} from './router.js';
 
-dotenv.config({ path : path.resolve(__dirname) +'/.env' });
+dotenv.config({ path : path.resolve() +'/server/.env' });
 
-global.HttpStatus = require('http-status-codes');
+import HttpStatus from 'http-status-codes';
+global.HttpStatus = HttpStatus;
 
-app.set('port',  process.env.PORT || 3000);
+app.set('port',  process.env.PORT || 9001);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended : false}));

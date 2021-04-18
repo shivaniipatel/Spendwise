@@ -1,11 +1,13 @@
 
 
-class Something {
+class Transactionn {
 
-    static async getHello(req, res) {
+    static async transactionn(req, res) {
         try {
+
+
             
-            return res.status(HttpStatus.OK).send({ success : true, msg : 'Hello Shivani'});
+            return res.status(HttpStatus.OK).send({ success : true, msg : 'Transactionn Added Successfully!'});
 
         } catch (err) {
             console.error(err);
@@ -15,4 +17,6 @@ class Something {
 
 }
 
-module.exports = Something;
+
+export {Transactionn};
+// module.exports = Transactionn;
