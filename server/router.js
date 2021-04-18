@@ -2,9 +2,8 @@
 import express from 'express';
 const router = express.Router();
 
-import {Transactionn} from './controllers/transaction.ctrl.js';
+import TransactionCtrl from './controllers/transaction.ctrl.js';
 
-router.post('/transaction', Transactionn.transactionn);
+router.post('/transaction', TransactionCtrl.transactionn);
 
-// module.exports = router;
 export {router};

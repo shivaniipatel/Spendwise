@@ -3,7 +3,6 @@
 import React from 'react';
 
 
-
 class Spendings extends React.Component {
 
     constructor(props) {

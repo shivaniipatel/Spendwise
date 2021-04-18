@@ -5,9 +5,9 @@ class Transactionn {
     static async transactionn(req, res) {
         try {
 
-
+            console.log('Server was hit with body ->> ', req.body);
             
-            return res.status(HttpStatus.OK).send({ success : true, msg : 'Transactionn Added Successfully!'});
+            return res.status(HttpStatus.OK).send({ success : true, msg : `${req.body.amount} Added Successfully!`});
 
         } catch (err) {
             console.error(err);
@@ -18,5 +18,4 @@ class Transactionn {
 }
 
 
-export {Transactionn};
-// module.exports = Transactionn;
+export default Transactionn;
